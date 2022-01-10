@@ -242,5 +242,51 @@
 	}
 
 
+	////////////////////////////////
+
+    function scrabbleScore(str){
+        let arr = []
+        let one = ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T']
+        let two = ['D', 'G' ]
+        let three = ['B', 'C', 'M', 'P' ]
+        let four = ['F', 'H', 'V', 'W', 'Y']
+        let five = ['K']
+        let eight = ['J', 'X']
+        let ten = ['Q','Z']
+
+
+        for(let i = 0; i <= str.length; i++){
+            let b = str[i]
+            debugger
+            for (var o = 0; o < one.length; o++ ){
+                b === one[o].toLowerCase() || b === one[o].toUpperCase() ? arr.push(1) : null
+            }
+            for (var t = 0; t < two.length; t++ ){
+                b === two[t].toLowerCase() || b === two[t].toUpperCase() ? arr.push(2) : null
+            }
+            for (var th = 0; th < three.length; th++ ){
+                b === three[th].toLowerCase() || b === three[th].toUpperCase() ? arr.push(3) : null
+            }
+            for (var f = 0; f < four.length; f++ ){
+                b === four[f].toLowerCase() || b === four[f].toUpperCase() ? arr.push(4) : null
+            }
+            for (var fi = 0; fi < five.length; fi++ ){
+                b === five[fi].toLowerCase() || b === five[fi].toUpperCase() ? arr.push(5) : null
+            }
+            for (var e = 0; e < eight.length; e++ ){
+                b === eight[e].toLowerCase() || b === eight[e].toUpperCase() ? arr.push(8) : null
+            }
+            for (var te = 0; te < ten.length; te++ ){
+                b === ten[te].toLowerCase()|| b === ten[te].toUpperCase()  ? arr.push(10) : null
+            }
+
+
+
+        }return arr.reduce(function(sum, current){ // этот метод складывает все числа массива.
+            return sum + current;
+        }, 0)
+
+    }
+
 </script>
 </html>
